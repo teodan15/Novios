@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="saludo">Hola <span id="nombreUsuario"></span>, tengo una sorpresa para ti...</h1>
+        <p class="subtitulo">Pero primero, nuestra historia ❤️</p>
+        
+        <div class="galeria" id="galeriaHistoria">
+            <div class="slide active">
+                <img src="images/historia/1.jpg" alt="Momento 1">
+                <p>El día que nos conocimos...</p>
+            </div>
+            <div class="slide">
+                <img src="images/historia/2.jpg" alt="Momento 2">
+                <p>Nuestro primer viaje juntos...</p>
+            </div>
+            <!-- Añade más slides según necesites -->
+        </div>
+        
+        <div class="controles">
+            <button id="btnAnterior">← Anterior</button>
+            <button id="btnSiguiente">Siguiente →</button>
+        </div>
+        
+        <button onclick="location.href='gustos.html'" class="btn-siguiente" id="btnContinuar">Continuar</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
