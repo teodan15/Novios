@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Oficialmente Novios!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: url('images/fondo-celebracion.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .container-celebracion {
+            background-color: rgba(13, 27, 42, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 1s;
+            backdrop-filter: blur(5px);
+            border: 2px solid #ff6b6b;
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .siuu {
+            font-size: 3rem;
+            color: #ff6b6b;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .confeti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            opacity: 0.8;
+            animation: caida linear infinite;
+            z-index: 0;
+            border-radius: 50%;
+        }
+        @keyframes caida {
+            0% { 
+                transform: translateY(-100px) rotate(0deg); 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100vh) rotate(360deg); 
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-celebracion">
+        <h1>¡<span id="nombreUsuario"></span>, oficialmente somos novios!</h1>
+        <div class="siuu">SIIIIUUUUUUU!!!</div>
+        <p>Este es solo el comienzo de nuestra hermosa historia juntos ❤️</p>
+    </div>
+
+    <script>
+        // Confeti simple pero efectivo
+        function crearConfeti() {
+            const colores = ['#ff6b6b', '#4cc9f0', '#f72585', '#4895ef', '#7209b7', '#3a86ff', '#4361ee'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confeti = document.createElement('div');
+                confeti.className = 'confeti';
+                confeti.style.left = Math.random() * 100 + 'vw';
+                confeti.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+                confeti.style.width = (Math.random() * 10 + 8) + 'px';
+                confeti.style.height = confeti.style.width;
+                confeti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confeti.style.animationDelay = (Math.random() * 5) + 's';
+                document.body.appendChild(confeti);
+            }
+        }
+        
+        window.onload = function() {
+            crearConfeti();
+            
+            // Mostrar nombre
+            const nombre = localStorage.getItem('nombreUsuario');
+            if (nombre) {
+                document.getElementById('nombreUsuario').textContent = nombre;
+            }
+        };
+    </script>
+</body>
+</html>

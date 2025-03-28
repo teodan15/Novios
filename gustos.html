@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo que me gusta de ti</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><span id="nombreUsuario"></span>, esto es lo que me gusta de ti ✨</h1>
+        
+        <div class="galeria" id="galeriaGustos">
+            <div class="slide active">
+                <img src="images/gustos/1.jpg" alt="Razón 1">
+                <p>Tu sonrisa ilumina mi día...</p>
+            </div>
+            <div class="slide">
+                <img src="images/gustos/2.jpg" alt="Razón 2">
+                <p>Tu forma de ser única...</p>
+            </div>
+            <!-- Añade más slides -->
+        </div>
+        
+        <div class="controles">
+            <button id="btnAnterior">← Anterior</button>
+            <button id="btnSiguiente">Siguiente →</button>
+        </div>
+        
+        <button onclick="location.href='propuesta.html'" class="btn-siguiente" id="btnContinuar">Continuar</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
